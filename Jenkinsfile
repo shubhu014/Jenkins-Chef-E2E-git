@@ -16,8 +16,8 @@ pipeline {
             steps {
                 sh 'sudo rm -r cookbooks'
                 sh 'sudo mkdir cookbooks'
-                sh 'sudo cd cookbooks && chef generate cookbook test2801-cookbook'
-                sh 'sudo cd cookbooks/test2801-cookbook && chef generate recipe test2801-recipe'
+                sh 'cd cookbooks && sudo chef generate cookbook test2801-cookbook'
+                sh 'cd cookbooks/test2801-cookbook && sudo chef generate recipe test2801-recipe'
               
            }
        }
