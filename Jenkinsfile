@@ -24,7 +24,7 @@ pipeline {
           stage('Move Recipe') {
             steps {
                 
-                sh 'mv test2801-recipe.rb cookbooks/test2801-cookbook/recipes/'
+                sh 'cp test2801-recipe.rb cookbooks/test2801-cookbook/recipes/'
                 
             }
         }
