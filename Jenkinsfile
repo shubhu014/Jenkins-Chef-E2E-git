@@ -29,13 +29,13 @@ pipeline {
                 
             }
         }
-/*         stage('Run Recipe') {
+         stage('Run Recipe') {
             steps {
-                
+                sh 'sudo su'
                 sh "cd cookbooks && chef-client -zr 'recipe[test2801-cookbook::test2801-recipe]'"
                 
             }
-        }*/
+        }
     /*    stage('Updating chef workstation') {
             steps {
                   sh "sudo chef-client -zr 'recipe[Jenkins-Chef-trial]' -o /home/ubuntu/chef-repo/cookbooks -c /home/ubuntu/chef-repo/.chef/config.rb"
