@@ -21,6 +21,13 @@ pipeline {
               
            }
        }
+          stage('Download Recipe') {
+            steps {
+                
+                sh 'mv test2801-recipe.rb cookbooks/test2801-cookbook/recipes/'
+                
+            }
+        }
     /*    stage('Updating chef workstation') {
             steps {
                   sh "sudo chef-client -zr 'recipe[Jenkins-Chef-trial]' -o /home/ubuntu/chef-repo/cookbooks -c /home/ubuntu/chef-repo/.chef/config.rb"
