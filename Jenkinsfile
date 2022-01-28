@@ -15,21 +15,21 @@ pipeline {
         stage('Make directory') {
             steps {
                   sh 'sudo su'
-                //sh 'sudo rm -r cookbooks'
+                  sh 'sudo rm -r cookbooks'
                   sh 'mkdir cookbooks'
                   sh 'cd cookbooks && chef generate cookbook test2801-cookbook'
                   sh 'cd cookbooks/test2801-cookbook && chef generate recipe test2801-recipe'
               
            }
        }
-      /*    stage('Move Recipe') {
+      stage('Move Recipe') {
             steps {
-                
+                sh 'sudo su'
                 sh 'cp test2801-recipe.rb cookbooks/test2801-cookbook/recipes/'
                 
             }
         }
-         stage('Run Recipe') {
+/*         stage('Run Recipe') {
             steps {
                 
                 sh "cd cookbooks && chef-client -zr 'recipe[test2801-cookbook::test2801-recipe]'"
