@@ -17,7 +17,7 @@ pipeline {
                 sh 'rm -r cookbooks'
                 sh 'mkdir cookbooks'
                 sh 'cd cookbooks && chef generate cookbook test2801-cookbook'
-                sh 'cd cookbooks && chef generate recipe test2801-recipe'
+                sh 'cd cookbooks/test2801-cookbook && chef generate recipe test2801-recipe'
               
            }
        }
