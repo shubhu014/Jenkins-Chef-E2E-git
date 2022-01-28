@@ -15,7 +15,7 @@ pipeline {
         stage('Make directory') {
             steps {
                 sh 'mkdir cookbooks'
-                sh 'chef generate cookbook test28-cookbook'
+                sh 'chef generate cookbook test2801-cookbook'
            }
        }
     /*    stage('Updating chef workstation') {
