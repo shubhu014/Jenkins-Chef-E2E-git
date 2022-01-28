@@ -31,8 +31,8 @@ pipeline {
         }
          stage('Run Recipe') {
             steps {
-                sh 'sudo su'
-                sh "cd cookbooks && chef-client -zr 'recipe[test2801-cookbook::test2801-recipe]'"
+                //sh 'sudo su'
+                sh "sudo su && cd cookbooks && chef-client -zr 'recipe[test2801-cookbook::test2801-recipe]'"
                 
             }
         }
