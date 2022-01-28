@@ -21,7 +21,7 @@ pipeline {
               
            }
        }
-          stage('Move Recipe') {
+      /*    stage('Move Recipe') {
             steps {
                 
                 sh 'cp test2801-recipe.rb cookbooks/test2801-cookbook/recipes/'
@@ -34,7 +34,7 @@ pipeline {
                 sh "cd cookbooks && chef-client -zr 'recipe[test2801-cookbook::test2801-recipe]'"
                 
             }
-        }
+        }*/
     /*    stage('Updating chef workstation') {
             steps {
                   sh "sudo chef-client -zr 'recipe[Jenkins-Chef-trial]' -o /home/ubuntu/chef-repo/cookbooks -c /home/ubuntu/chef-repo/.chef/config.rb"
