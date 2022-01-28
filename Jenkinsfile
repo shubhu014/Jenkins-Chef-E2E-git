@@ -14,10 +14,10 @@ pipeline {
         }*/
         stage('Make directory') {
             steps {
-                sh 'rm -r cookbooks'
-                sh 'mkdir cookbooks'
-                sh 'cd cookbooks && chef generate cookbook test2801-cookbook'
-                sh 'cd cookbooks/test2801-cookbook && chef generate recipe test2801-recipe'
+                sh 'sudo rm -r cookbooks'
+                sh 'sudo mkdir cookbooks'
+                sh 'sudo cd cookbooks && chef generate cookbook test2801-cookbook'
+                sh 'sudo cd cookbooks/test2801-cookbook && chef generate recipe test2801-recipe'
               
            }
        }
