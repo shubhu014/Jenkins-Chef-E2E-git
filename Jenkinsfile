@@ -7,7 +7,7 @@ pipeline {
         stage('Download Chef workstation') {
             steps {
                 
-                wget https://packages.chef.io/files/stable/chef-workstation/22.1.745/ubuntu/20.04/chef-workstation_22.1.745-1_amd64.deb
+                sh 'wget https://packages.chef.io/files/stable/chef-workstation/22.1.745/ubuntu/20.04/chef-workstation_22.1.745-1_amd64.deb'
                 
             }
         }
