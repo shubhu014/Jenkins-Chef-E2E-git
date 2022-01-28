@@ -21,10 +21,17 @@ pipeline {
               
            }
        }
-          stage('Download Recipe') {
+          stage('Move Recipe') {
             steps {
                 
                 sh 'mv test2801-recipe.rb cookbooks/test2801-cookbook/recipes/'
+                
+            }
+        }
+         stage('Run Recipe') {
+            steps {
+                
+                sh "cd cookbooks && chef-client -zr 'recipe[test2801-cookbook::test2801-recipe]'"
                 
             }
         }
