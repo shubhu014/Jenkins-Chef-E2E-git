@@ -12,6 +12,14 @@ pipeline {
                 
             }
         }*/
+        
+        stage('Let the human feel important') {
+            input{message "Click Proceed to continue the build"}
+            steps {
+                echo "User input"
+                
+            }
+        }
         stage('Make directory') {
             steps {
                   sh 'sudo su'
@@ -29,7 +37,7 @@ pipeline {
                 
             }
         }
-         stage('Run Recipeeeee') {
+       /*  stage('Run Recipeeeee') {
             steps {
                 //sh 'sudo su'
                 sh "sudo su && cd cookbooks && chef-client -zr 'recipe[test2801-cookbook::test2801-recipe]'"
