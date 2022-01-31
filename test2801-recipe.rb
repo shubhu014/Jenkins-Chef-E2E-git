@@ -15,7 +15,7 @@ package 'apache2' do
 end
 
 file '/var/www/html/index.html' do
-  content 'Hey today is Good day'
+  content 'Hey today is Good day again'
   action :create
 end
 
