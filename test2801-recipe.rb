@@ -15,7 +15,7 @@ package 'apache2' do
 end
 
 file '/var/www/html/index.html' do
-  content 'Welcome to Data Geek. This is coming from test2801-recipe using jenkins'
+  content 'Hey today is Good day'
   action :create
 end
 
