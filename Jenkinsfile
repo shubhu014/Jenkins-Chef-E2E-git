@@ -20,7 +20,7 @@ pipeline {
                 
             }
         }
-        stage('Make directory') {
+        /*stage('Make directory') {
             steps {
                   sh 'sudo su'
                   sh 'sudo rm -r cookbooks'
@@ -29,8 +29,8 @@ pipeline {
                   sh 'cd cookbooks/test2801-cookbook && chef generate recipe test2801-recipe'
               
            }
-       }
-      stage('Move Recipe') {
+       }*/
+      stage('Copy Recipe') {
             steps {
                 sh 'sudo su'
                 sh 'cp test2801-recipe.rb cookbooks/test2801-cookbook/recipes/'
@@ -48,14 +48,14 @@ pipeline {
             steps {
                   sh "sudo chef-client -zr 'recipe[Jenkins-Chef-trial]' -o /home/ubuntu/chef-repo/cookbooks -c /home/ubuntu/chef-repo/.chef/config.rb"
                 }
-          
+          */
           stage('Upload cookbook to chef server') {
             steps {
                 //sh 'cd /home/ubuntu/chef-repo'
-                sh "sudo knife cookbook upload Jenkins-Chef-trial --force -o /home/ubuntu/chef-repo/cookbooks -c /home/ubuntu/chef-repo/.chef/config.rb"
+                sh "sudo knife cookbook upload test2801-cookbook --force -o /var/lib/jenkins/workspace/Jenkins-Chef-E2E/chef-repo -c /var/lib/jenkins/workspace/Jenkins-Chef-E2E/chef-repo/.chef/config.rb"
            }
        }
-       
+       /*
         stage('Print Workspace') {
             steps {
                 echo "${WORKSPACE}"
